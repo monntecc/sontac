@@ -1,0 +1,80 @@
+{
+  "beta": {
+    "popup-title": "Since this site is in early access it may contain bugs",
+    "popup-small-title": "Site is in early access",
+    "popup-contact": "Contact"
+  },
+  "contact": {
+    "title":  "Contact me",
+    "email": "Your email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send message",
+    "subject-placeholder": "Let me know how i can help you",
+    "message-placeholder": "Your message"
+  },
+  "nav": {
+    "movies": "Movies",
+    "tv": "TV",
+    "discover": {
+      "title": "Discover",
+      "movie": {
+        "title": "Discover Movie",
+        "desc": "Discover movies."
+      },
+      "tv": {
+        "title": "Discover TV",
+        "desc": "Discover tvs,"
+      },
+      "popular": {
+        "title": "Popular",
+        "desc": "Popular movies and tvs,"
+      },
+      "trending": {
+        "title": "Trending",
+        "desc": "Trending movies and tvs,"
+      },
+      "favorite": {
+        "title": "Favorite Movies / TVs",
+        "desc": "Your favorite movies and tvs that you have marked,"
+      },
+      "language": {
+        "title": "Change language",
+        "desc": "Changing the language on the site"
+      }
+    },
+    "contact": "Contact me"
+  },
+  "footer": {
+    "resources": "Resources",
+    "follow": "Follow me"
+  },
+  "trending-title": "Trending Movies in the last Week",
+  "popular-title": "Popular Movies",
+  "discover-movie-title": "Discover Movies",
+  "discover-tv-title": "Discover TV",
+  "page": "Select a page",
+  "second-card": {
+    "success": "Successfully!" ,
+    "error": "Error! Is already marked!",
+    "details": "View details",
+    "add": "Add to favorite"
+  },
+  "card": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "editor": {
+      "head": "Movie Editor",
+      "title": "Title",
+      "release_date": "Release date",
+      "overview": "Overview",
+      "vote_average": "Vote average",
+      "image_path": "Image path (optional)",
+      "button": "Change this movie"
+    }
+  },
+  "tv": {
+    "language": "Original language:",
+    "vote": "Vote Count:"
+  }
+}

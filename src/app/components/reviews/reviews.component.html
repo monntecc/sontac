@@ -1,0 +1,15 @@
+<span class="flex items-center gap-2">
+      <img src="https://cdn-icons-png.flaticon.com/512/1053/1053244.png" alt="{{review.author}}" width="32px">
+  {{review.author}}, {{review.created_at | date}}</span>
+<span>{{reviewOpened ? review.content : review.content.slice(0, 400) + '...'}}</span>
+<span class="w-full flex items-end justify-end">
+  <button
+    class="mt-2 text-[18px] rounded-xl pl-4 pr-4 pt-1 pb-1 text-gray-200"
+    (click)="reviewOpened = !reviewOpened"
+    [class]="reviewOpened ? 'bg-blue-900' : 'bg-blue-500'"
+    [ngSwitch]="reviewOpened"
+  >
+  <span *ngSwitchCase="true">Close review</span>
+  <span *ngSwitchCase="false">Open full review</span>
+</button>
+</span>
