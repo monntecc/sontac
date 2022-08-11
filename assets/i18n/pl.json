@@ -1,0 +1,81 @@
+{
+  "beta": {
+    "popup-title": "Ponieważ ta strona jest we wczesnym dostępie, może zawierać błędy",
+    "popup-small-title": "Witryna jest we wczesnym dostępie",
+    "popup-contact": "Kontakt"
+  },
+  "contact": {
+    "title":  "Skontaktuj się ze mną",
+    "email": "Twój email",
+    "subject": "Temat",
+    "message": "Message",
+    "send": "Wyślij wiadomość",
+    "subject-placeholder": "Daj mi znać, jak mogę Ci pomóc",
+    "message-placeholder": "Twoja wiadomość"
+  },
+  "nav": {
+    "movies": "Filmy",
+    "tv": "Telewizja",
+    "discover": {
+      "title": "Odkryj",
+      "movie": {
+        "title": "Odkryj filmy",
+        "desc": "Odkrywaj filmy."
+      },
+      "tv": {
+        "title": "Odkryj telewizję",
+        "desc": "Odkrywaj telewizję."
+      },
+      "popular": {
+        "title": "Popularne",
+        "desc": "Popularne filmy i programy telewizyjne."
+      },
+      "trending": {
+        "title": "Trendy",
+        "desc": "Najpopularniejsze filmy i programy telewizyjne."
+      },
+      "favorite": {
+        "title": "Ulubione filmy / programy telewizyjne",
+        "desc": "Twoje ulubione filmy i programy telewizyjne, które oznaczyłeś."
+      },
+      "language": {
+        "title": "Zmień język",
+        "desc": "Zmiana języka na stronie."
+      }
+    },
+    "contact": "Kontakt ze mną"
+  },
+  "footer": {
+    "resources": "Zasoby",
+    "follow": "Subskrybuj mnie"
+  },
+  "trending-title": "Filmy zyskujące popularność w ostatnim tygodniu",
+  "popular-title": "Popularne filmy",
+  "discover-movie-title": "Odkrywaj filmy",
+  "discover-tv-title": "Odkrywaj programy telewizyjne",
+  "page": "Wybierz stronę",
+  "second-card": {
+    "success": "Z powodzeniem!" ,
+    "error": "Błąd! Jest już oznaczony!",
+    "details": "Pokaż szczegóły",
+    "add": "Dodaj do ulubionych"
+  },
+  "card": {
+    "edit": "Edycja",
+    "delete": "Usunąć",
+    "editor": {
+      "head": "Edytor filmów",
+      "title": "Tytuł",
+      "release_date": "Data wydania",
+      "overview": "Przegląd",
+      "vote_average": "Średnia głosów",
+      "image_path": "Ścieżka obrazu (opcjonalnie)",
+      "button": "Zmień ten film"
+    }
+  },
+  "tv": {
+    "language": "Oryginaly język:",
+    "vote": "Liczba głosów:"
+  }
+
+}
