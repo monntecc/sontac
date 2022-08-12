@@ -80,5 +80,6 @@
   },
   "favorite_title": "At the moment, the list of favorite movies is empty. You can top it up here:",
   "favorite_link": "Link",
-  "btn_watch": "Watch trailer"
+  "btn_watch": "Watch trailer",
+  "stage_loading": "The page is loading. Show patience."
 }

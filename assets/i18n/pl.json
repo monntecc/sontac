@@ -80,5 +80,6 @@
   },
   "favorite_title": "W tej chwili lista ulubionych filmów jest pusta. Możesz go doładować tutaj:",
   "favorite_link": "Link",
-  "btn_watch": "Oglądać zwiastun"
+  "btn_watch": "Oglądać zwiastun",
+  "stage_loading": "Strona się ładuje. Okaż cierpliwość."
 }
