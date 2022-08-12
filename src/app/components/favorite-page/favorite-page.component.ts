@@ -12,7 +12,7 @@ export class FavoritePageComponent implements OnInit, OnDestroy {
   movieElement!: Subscription;
   favoriteMovies: Record<string, DetailsModel> = {};
 
-  storageIds = localStorage['favoriteId'];
+  storageIds = localStorage['favoriteId'] || 0;
 
   constructor(private http: TMDBService, private storage: StorageService) { }
 

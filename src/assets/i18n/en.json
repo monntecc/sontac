@@ -54,27 +54,32 @@
   "discover-movie-title": "Discover Movies",
   "discover-tv-title": "Discover TV",
   "page": "Select a page",
-  "second-card": {
-    "success": "Successfully!" ,
-    "error": "Error! Is already marked!",
-    "details": "View details",
-    "add": "Add to favorite"
-  },
-  "card": {
-    "edit": "Edit",
-    "delete": "Delete",
-    "editor": {
-      "head": "Movie Editor",
-      "title": "Title",
-      "release_date": "Release date",
-      "overview": "Overview",
-      "vote_average": "Vote average",
-      "image_path": "Image path (optional)",
-      "button": "Change this movie"
-    }
-  },
+  "btn_details": "View details",
   "tv": {
     "language": "Original language:",
     "vote": "Vote Count:"
-  }
+  },
+  "details": {
+    "title": "Title: ",
+    "status": "Status: ",
+    "language": "Language: ",
+    "votes": "Votes: ",
+    "overview": "Overview: ",
+    "release_date": "Release date: ",
+    "budget": "Budget: ",
+    "genres": "Genres: ",
+    "homepage": "Homepage: ",
+    "spoked_languages": "Spoken languages: ",
+    "production_companies": "Production Companies: ",
+    "movie_cast": "Movie Cast: ",
+    "movie_crew": "Movie Crew: ",
+    "reviews": "Reviews: ",
+    "recommendations": "Recommendations: ",
+    "button_opened": "Open full review",
+    "button_closed": "Close review"
+  },
+  "favorite_title": "At the moment, the list of favorite movies is empty. You can top it up here:",
+  "favorite_link": "Link",
+  "btn_watch": "Watch trailer",
+  "stage_loading": "The page is loading. Show patience."
 }

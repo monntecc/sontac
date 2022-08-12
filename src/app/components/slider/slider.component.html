@@ -7,7 +7,7 @@
     }"
     class="mySwiper rounded-2xl"
   >
-     <ng-template swiperSlide *ngFor="let item of container" class="rounded-2xl">
+     <ng-template swiperSlide *ngFor="let item of container">
        <section class="flex md:flex-row justify-around relative w-full z-0 rounded-2xl border border-gray-400 dark:border-gray-800 py-3 px-5 items-center flex-col h-full">
          <div class="absolute top-0 bottom-0 right-0 left-0 z-[-1] w-auto justify-center items-center flex">
            <img [src]="'https://image.tmdb.org/3/t/p/original/' + item.backdrop_path" class="w-full h-full blur backdrop">
@@ -18,7 +18,7 @@
            <span class="text-blue-300 font-medium">{{item.vote_average.toFixed(1)}}</span>
            <span class="max-w-[260px] mt-3 dark:text-gray-200 text-gray-100">{{item.overview?.slice(0, 50) + '...'}}</span>
            <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-             <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" routerLink="/details/{{item.id}}">View Details</button>
+             <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" routerLink="/details/{{item.id}}">{{'btn_details' | translate}}</button>
            </div>
          </div>
        </section>

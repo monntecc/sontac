@@ -15,6 +15,7 @@ export class FavoritesComponent implements OnInit {
   onRemove() {
     const ids = this.storage.getStorageValue<number[]>('favoriteId', []).filter(e => e != this.movieId);
     this.storage.setStorageValue('favoriteId', ids);
+    window.location.reload();
   }
 
   ngOnInit(): void {

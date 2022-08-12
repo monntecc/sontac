@@ -24,6 +24,8 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import { DiscoverTvComponent } from './components/discover-tv/discover-tv.component';
 import { DiscoverMoviesComponent } from './components/discover-movies/discover-movies.component';
 import {SwiperModule} from "swiper/angular";
+import { MoviesComponent } from './components/movies/movies.component';
+import { TvsComponent } from './components/tvs/tvs.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import {SwiperModule} from "swiper/angular";
     FavoritePageComponent,
     ReviewsComponent,
     DiscoverTvComponent,
-    DiscoverMoviesComponent
+    DiscoverMoviesComponent,
+    MoviesComponent,
+    TvsComponent
   ],
   imports: [
     BrowserModule,

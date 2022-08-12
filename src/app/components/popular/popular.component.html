@@ -1,8 +1,8 @@
 <section class="flex flex-col mt-[7rem] overflow-hidden">
   <h2 class="text-3xl dark:text-gray-200 text-gray-800 ml-3 mt-5 mb-3">{{'popular-title' | translate}}</h2>
-  <div class="grid 2xl:grid-cols-3 xl:grid-cols-2 gap-2 flex flex-col items-center justify-center ml-auto mr-auto">
-    <div *ngFor="let element of container">
-      <app-second-card [item]="element"></app-second-card>
+  <div class="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-4">
+    <div *ngFor="let movieEl of container">
+      <app-card [item]="movieEl" [container]="container"></app-card>
     </div>
   </div>
   <div class="flex dark:text-gray-300 text-gray-700 gap-2 flex-col items-end w-full mb-4 mt-2 text-2xl px-5">

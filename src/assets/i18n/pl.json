@@ -5,7 +5,7 @@
     "popup-contact": "Kontakt"
   },
   "contact": {
-    "title":  "Skontaktuj się ze mną",
+    "title": "Skontaktuj się ze mną",
     "email": "Twój email",
     "subject": "Temat",
     "message": "Message",
@@ -54,28 +54,32 @@
   "discover-movie-title": "Odkrywaj filmy",
   "discover-tv-title": "Odkrywaj programy telewizyjne",
   "page": "Wybierz stronę",
-  "second-card": {
-    "success": "Z powodzeniem!" ,
-    "error": "Błąd! Jest już oznaczony!",
-    "details": "Pokaż szczegóły",
-    "add": "Dodaj do ulubionych"
-  },
-  "card": {
-    "edit": "Edycja",
-    "delete": "Usunąć",
-    "editor": {
-      "head": "Edytor filmów",
-      "title": "Tytuł",
-      "release_date": "Data wydania",
-      "overview": "Przegląd",
-      "vote_average": "Średnia głosów",
-      "image_path": "Ścieżka obrazu (opcjonalnie)",
-      "button": "Zmień ten film"
-    }
-  },
+  "btn_details": "Pokaż szczegóły",
   "tv": {
     "language": "Oryginaly język:",
     "vote": "Liczba głosów:"
-  }
-
+  },
+  "details": {
+    "title": "Tytuł: ",
+    "status": "Status: ",
+    "language": "Język: ",
+    "votes": "Głosy: ",
+    "overview": "Przegląd: ",
+    "release_date": "Data wydania: ",
+    "budget": "Budżet: ",
+    "genres": "Gatunki: ",
+    "homepage": "Strona główna: ",
+    "spoked_languages": "Języki mówione: ",
+    "production_companies": "Firmy produkcyjne: ",
+    "movie_cast": "Obsada filmu: ",
+    "movie_crew": "Ekipa filmowa: ",
+    "reviews": "Opinie: ",
+    "recommendations": "Zalecenia: ",
+    "button_opened": "Otwórz pełną recenzję",
+    "button_closed": "Zamknij recenzję"
+  },
+  "favorite_title": "W tej chwili lista ulubionych filmów jest pusta. Możesz go doładować tutaj:",
+  "favorite_link": "Link",
+  "btn_watch": "Oglądać zwiastun",
+  "stage_loading": "Strona się ładuje. Okaż cierpliwość."
 }

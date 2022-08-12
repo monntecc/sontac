@@ -1,7 +1,7 @@
 <div class="py-3 sm:max-w-xl sm:mx-auto mb-10 md:mb-0 relative">
-  <div class="dark:bg-gray-800 bg-gray-100 shadow-lg dark:border-gray-700 border-gray-300 max-h-80 border sm:rounded-3xl p-8 flex space-x-8 h-[500px]">
-    <a class="h-48 overflow-visible w-1/2" [href]="'/details/' + item.id">
-      <img class="rounded-3xl shadow-lg hover:transform hover:scale-90 transition-transform "
+  <div class="dark:bg-gray-800 bg-gray-50 shadow-lg dark:border-gray-700 border-gray-200 max-h-80 border sm:rounded pt-8 pb-8 pr-8 flex space-x-10 h-[500px]">
+    <a class="h-48 w-1/2 items-center flex justify-center" [href]="'/details/' + item.id">
+      <img class="mt-16 pl-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition-transform "
            [src]="item.poster_path  != null ? item.poster_path : 'https://static.hdrezka.ac/i/nopersonphoto.png'">
     </a>
     <div class="flex flex-col w-1/2 space-y-4">
@@ -12,45 +12,10 @@
           <div class="font-bold rounded-xl p-2"
                [class]="item.vote_average <= 5 ? 'bg-red-500' : item.vote_average > 7 ? 'bg-green-500' : 'bg-yellow-500'">{{item.vote_average.toFixed(1)}}
           </div>
-          <button id="dropdownButton" data-dropdown-toggle="dropdown" class="mt-2 inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button"
-                  (click)="isOpened = !isOpened"
-          >
-            <span class="sr-only">Open dropdown</span>
-            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+          <button (click)="addToFavorite()" class="mt-2 transition-all inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button" [disabled]="isFavorited">
+            <span [class]="isFavorited ? 'hidden': 'block'"><img src="https://i.ibb.co/288SC2c/favorite-1.png" alt="" class="w-8" [ngClass]="themeColor === 'dark' ? 'saturate' : 'normal'"></span>
+            <span [class]="isFavorited ? 'block': 'hidden'"><img src="https://i.ibb.co/RQTJ3D6/favorite-3.png" alt="" class="w-8"></span>
           </button>
-          <div id="dropdown" class="z-10 w-[120px] text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 block absolute top-36 right-0" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
-               [ngClass]="isOpened ? '' : 'hidden'"
-          >
-            <ul class="py-1" aria-labelledby="dropdownButton">
-              <li>
-                <a (click)="onEdit()" class="cursor-pointer block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >{{'card.edit' | translate}}</a>
-              </li>
-              <li>
-                <a (click)="onDelete()" class="cursor-pointer block py-2 px-4 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >{{'card.delete' | translate}}</a>
-              </li>
-            </ul>
-          </div>
-          <div class="z-[10000] transition-opacity clear-both fixed top-0 bottom-0 left-0 right-0 w-full h-full bg-gray-900 dark:bg-gray-800 dark:bg-opacity-90 bg-opacity-90 flex items-center justify-center"
-               [class]="formOpened ? 'opacity-100 pointer-events-all' : 'opacity-0 pointer-events-none'"
-          >
-            <div class="flex flex-col gap-3 p-3 items-center justify-center rounded relative text-gray-900 dark:text-gray-200 bg-gray-100 dark:bg-gray-900 w-1/3">
-              <span class="text-gray-600 dark:text-gray-200 text-center text-2xl p-3 font-medium">{{'card.editor.head' | translate}}</span>
-              <input [(ngModel)]="movieTitle" class="p-2 w-full rounded dark:bg-gray-700" type="text" placeholder="{{'card.editor.title' | translate}}" required>
-              <input [(ngModel)]="movieRelease_date" class="p-2 w-full rounded dark:bg-gray-700" type="text" placeholder="{{'card.editor.release_date' | translate}}e" required>
-              <input [(ngModel)]="movieOverview" class="p-2 w-full rounded dark:bg-gray-700" type="text" placeholder="{{'card.editor.overview' | translate}}" required>
-              <input [(ngModel)]="movieVote_average" class="p-2 w-full rounded dark:bg-gray-700" type="number" placeholder="{{'card.editor.vote_average' | translate}}" required>
-              <input [(ngModel)]="movieImage_path" class="p-2 w-full rounded dark:bg-gray-700" type="text" placeholder="{{'card.editor.image-path' | translate}}">
-              <button (click)="submitForm()" class="bg-blue-500 text-gray-200 rounded p-3 w-1/3">{{'card.editor.button' | translate}}</button>
-            </div>
-            <button (click)="formOpened = false" class="absolute right-10 top-36">
-              <img
-                src="https://i.ibb.co/0QyfjJx/6276642.png"
-                width="32px"
-              >
-            </button>
-          </div>
         </section>
       </div>
       <div>

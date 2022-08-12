@@ -1,55 +1,39 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MovieModel} from "../../models/movie.model";
+import {StorageService} from "../../services/storage/storage.service";
 
 @Component({
   selector: 'app-card',
-  templateUrl: './card.component.html'
+  templateUrl: './card.component.html',
+  styles: [`
+    .saturate { filter: brightness(0) invert(1); }
+    .normal { filter: none; }
+  `]
 })
 export class CardComponent implements OnInit {
   @Input() item!: MovieModel;
   @Input() container!: MovieModel[];
 
-  formOpened: boolean = false;
-  isOpened: boolean = false;
+  isFavorited: boolean = false;
 
-  movieTitle: string = '';
-  movieRelease_date: string = '';
-  movieOverview: string = '';
-  movieVote_average: number = 0;
-  movieImage_path: string | null = '';
+  themeColor = localStorage['color-theme'];
 
-  submitForm() {
-    this.item.title = this.movieTitle;
-    this.item.release_date = this.movieRelease_date;
-    this.item.overview = this.movieOverview;
-    this.item.vote_average = this.movieVote_average;
-    this.item.poster_path = this.movieImage_path || this.item.poster_path;
-
-    this.formOpened = false;
+  addToFavorite() {
+    const ids = this.storage.getStorageValue<number[]>('favoriteId', []);
+    if (ids.includes(this.item.id)) return;
+    ids.push(this.item.id);
+    this.storage.setStorageValue('favoriteId', ids);
+    this.isFavorited = true;
   }
 
-  onEdit() {
-    this.isOpened = false;
-    this.formOpened = true;
-
-    this.movieTitle = this.item.title;
-    this.movieRelease_date = this.item.release_date;
-    this.movieOverview = this.item.overview;
-    this.movieVote_average= this.item.vote_average;
-    this.movieImage_path = this.item.poster_path;
-  }
-
-  onDelete() {
-    const index = this.container.indexOf(this.item);
-    if(this.container.includes(this.item)) {
-      this.container.splice(index, 1);
-    }
-  }
-
-  constructor() { }
+  constructor(private storage: StorageService) { }
 
   ngOnInit(): void {
     this.item.poster_path = 'https://image.tmdb.org/3/p/t/w500/' + this.item.poster_path;
+    const ids = this.storage.getStorageValue<number[]>('favoriteId', []);
+    if (ids.includes(this.item.id)) this.isFavorited = true;
+
+    this.themeColor == null ? this.themeColor = "dark" : "light";
   }
 
 }

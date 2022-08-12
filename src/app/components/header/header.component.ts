@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   searchOpened: boolean = false;
   discoverOpened: boolean = false;
   contactFormOpened: boolean = false;
+  isLoaded: boolean = false;
 
   searchContainer!: MultiSearchModel;
 
@@ -18,6 +19,16 @@ export class HeaderComponent implements OnInit {
     setTimeout(() => {
       value
     }, 3000);
+  }
+  refresh(): void {
+    window.location.reload();
+  }
+
+  stageLoading() {
+    this.isLoaded = false;
+    setTimeout(() => {
+      this.isLoaded = true;
+    }, 1500);
   }
 
   onChangeMode() {
@@ -76,6 +87,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.onChangeMode();
+    this.stageLoading();
   }
 
   onTyping() {
