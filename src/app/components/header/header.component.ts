@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {TMDBService} from "../../services/api/tmdb.service";
-import {MultiSearchModel} from "../../models/multi-search.model";
+import { Component, OnInit } from '@angular/core';
+import { TMDBService } from '../../services/api/tmdb.service';
+import { MultiSearchModel } from '../../models/multi-search.model';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
   responsiveOpened: boolean = false;
@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
 
   onClickTimeout(value: any) {
     setTimeout(() => {
-      value
+      value;
     }, 3000);
   }
   refresh(): void {
@@ -26,22 +26,32 @@ export class HeaderComponent implements OnInit {
 
   stageLoading() {
     this.isLoaded = false;
-    setTimeout(() => {
-      this.isLoaded = true;
-    }, 1500);
+    window.onload = () => (this.isLoaded = true);
   }
 
   onChangeMode() {
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (
+      localStorage.getItem('color-theme') === 'dark' ||
+      (!('color-theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
       document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.remove('dark');
     }
 
-    const themeToggleDarkIcon: any = document.getElementById('theme-toggle-dark-icon');
-    const themeToggleLightIcon: any = document.getElementById('theme-toggle-light-icon');
+    const themeToggleDarkIcon: any = document.getElementById(
+      'theme-toggle-dark-icon'
+    );
+    const themeToggleLightIcon: any = document.getElementById(
+      'theme-toggle-light-icon'
+    );
 
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (
+      localStorage.getItem('color-theme') === 'dark' ||
+      (!('color-theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
       themeToggleLightIcon.classList.remove('hidden');
     } else {
       themeToggleDarkIcon.classList.remove('hidden');
@@ -49,8 +59,7 @@ export class HeaderComponent implements OnInit {
 
     const themeToggleBtn: any = document.getElementById('theme-toggle');
 
-    themeToggleBtn.addEventListener('click', function() {
-
+    themeToggleBtn.addEventListener('click', function () {
       // toggle icons inside button
       themeToggleDarkIcon.classList.toggle('hidden');
       themeToggleLightIcon.classList.toggle('hidden');
@@ -75,15 +84,13 @@ export class HeaderComponent implements OnInit {
           localStorage.setItem('color-theme', 'dark');
         }
       }
-
     });
   }
 
   query: string = '';
   page: number = 1;
 
-  constructor(private http: TMDBService) {
-  }
+  constructor(private http: TMDBService) {}
 
   ngOnInit(): void {
     this.onChangeMode();
@@ -91,13 +98,12 @@ export class HeaderComponent implements OnInit {
   }
 
   onTyping() {
-      this.initializeMultiSearch();
+    this.initializeMultiSearch();
   }
 
   initializeMultiSearch() {
-    this.http.getMultiSearch(this.query, this.page).subscribe(search => {
+    this.http.getMultiSearch(this.query, this.page).subscribe((search) => {
       this.searchContainer = search;
     });
   }
-
 }
