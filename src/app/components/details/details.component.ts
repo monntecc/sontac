@@ -5,7 +5,6 @@ import { CreditsModel } from '../../models/credits.model';
 import { VideosModel } from '../../models/videos.model';
 import { DetailsModel } from '../../models/details.model';
 import { ReviewsModel } from '../../models/reviews.model';
-import { MovieModel } from '../../models/movie.model';
 import { RecommendationsModel } from '../../models/recommendations.model';
 
 @Component({
