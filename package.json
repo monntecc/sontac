@@ -11,14 +11,14 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^14.1.0",
-    "@angular/common": "^14.1.0",
-    "@angular/compiler": "^14.1.0",
-    "@angular/core": "^14.1.0",
-    "@angular/forms": "^14.1.0",
-    "@angular/platform-browser": "^14.1.0",
-    "@angular/platform-browser-dynamic": "^14.1.0",
-    "@angular/router": "^14.1.0",
+    "@angular/animations": "^15.2.10",
+    "@angular/common": "^15.2.10",
+    "@angular/compiler": "^15.2.10",
+    "@angular/core": "^15.2.10",
+    "@angular/forms": "^15.2.10",
+    "@angular/platform-browser": "^15.2.10",
+    "@angular/platform-browser-dynamic": "^15.2.10",
+    "@angular/router": "^15.2.10",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "angular-cli-ghpages": "^1.0.3",
@@ -30,12 +30,12 @@
     "swiper": "^8.3.2",
     "tailwindcss": "^3.1.8",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.14.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^14.1.0",
-    "@angular/cli": "~14.1.0",
-    "@angular/compiler-cli": "^14.1.0",
+    "@angular-devkit/build-angular": "^15.2.10",
+    "@angular/cli": "~15.2.10",
+    "@angular/compiler-cli": "^15.2.10",
     "@biesbjerg/ngx-translate-extract": "^7.0.4",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.2.0",
@@ -44,6 +44,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~5.2"
+    "typescript": "~5.3.2"
   }
 }
