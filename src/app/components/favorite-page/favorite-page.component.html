@@ -1,8 +1,21 @@
 <div class="mt-[8rem]">
-  <div *ngIf="favoriteMovies != null" class="grid xl:grid-cols-3 lg:grid-cols-2">
-    <app-favorites *ngFor="let favorite of favoriteMovies | keyvalue" [item]="favorite.value" [movieId]="favorite.value.id"></app-favorites>
+  <div *ngIf="favoriteMovies" class="grid xl:grid-cols-3 lg:grid-cols-2">
+    <app-favorites
+      *ngFor="let favorite of favoriteMovies | keyvalue"
+      [item]="favorite.value"
+      [movieId]="favorite.value.id"
+    ></app-favorites>
   </div>
-  <div class="w-full h-full mt-[2%] mb-[30%] justify-center items-center text-center flex vsm:mb-[50%]" *ngIf="storageIds.length < 3 || storageIds == 0">
-    <span class="dark:bg-gray-800 bg-gray-100 py-4 px-6 rounded-xl dark:text-gray-200 text-gray-900 text-2xl">{{'favorite_title' | translate}} <a href="/popular" class="hover:underline text-blue-500">{{'favorite_link' | translate}}</a></span>
+  <div
+    class="w-full h-full mt-[2%] mb-[30%] justify-center items-center text-center flex vsm:mb-[50%]"
+    *ngIf="storageIds.length < 3 || storageIds === 0"
+  >
+    <span
+      class="dark:bg-gray-800 bg-gray-100 py-4 px-6 rounded-xl dark:text-gray-200 text-gray-900 text-2xl"
+      >{{ "favorite_title" | translate }}
+      <a href="/popular" class="hover:underline text-blue-500">{{
+        "favorite_link" | translate
+      }}</a></span
+    >
   </div>
 </div>

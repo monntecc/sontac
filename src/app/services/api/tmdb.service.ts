@@ -1,21 +1,20 @@
-import {environment} from "../../../environments/environment.prod";
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {ReviewsModel} from "../../models/reviews.model";
-import {CreditsModel} from "../../models/credits.model";
-import {Injectable} from "@angular/core";
-import {DetailsModel} from "../../models/details.model";
-import {VideosModel} from "../../models/videos.model";
-import {RecommendationsModel} from "../../models/recommendations.model";
-import {MultiSearchModel} from "../../models/multi-search.model";
+import { environment } from '../../../environments/environment.prod';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { ReviewsModel } from '../../models/reviews.model';
+import { CreditsModel } from '../../models/credits.model';
+import { Injectable } from '@angular/core';
+import { DetailsModel } from '../../models/details.model';
+import { VideosModel } from '../../models/videos.model';
+import { RecommendationsModel } from '../../models/recommendations.model';
+import { MultiSearchModel } from '../../models/multi-search.model';
 
 @Injectable()
 export class TMDBService {
   private apiKey = environment.apiKey;
   language = localStorage['language'];
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getTrending(type: string, timeWindow: string, page: number): Observable<any> {
     const request = `https://api.themoviedb.org/3/trending/${type}/${timeWindow}?api_key=${this.apiKey}&language=${this.language}&page=${page}`;
@@ -47,7 +46,10 @@ export class TMDBService {
     return this.http.get<DetailsModel>(request);
   }
 
-  getRecommendations(type: string, id: number): Observable<RecommendationsModel> {
+  getRecommendations(
+    type: string,
+    id: number,
+  ): Observable<RecommendationsModel> {
     const request = `https://api.themoviedb.org/3/${type}/${id}/recommendations?api_key=${this.apiKey}&language=${this.language}`;
     return this.http.get<RecommendationsModel>(request);
   }
@@ -60,7 +62,5 @@ export class TMDBService {
   getDiscover(type: string, page: number, content: string): Observable<any> {
     const request = `https://api.themoviedb.org/3/discover/${type}?api_key=${this.apiKey}&language=${this.language}&sort_by=${content}&page=${page}`;
     return this.http.get(request);
-
   }
-
 }

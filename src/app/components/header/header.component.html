@@ -138,7 +138,7 @@
     </form>
     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
       <a href="mailto:contact@nylestroke.me" class="hover:underline"
-        >contact@nylestroke.me</a
+        >contact&#64;nylestroke.me</a
       >
     </p>
   </div>
@@ -179,7 +179,11 @@
   >
     <div class="container flex flex-wrap justify-between items-center mx-auto">
       <a routerLink="/" class="flex items-center cursor-pointer">
-        <img src="https://i.ibb.co/QN6fQnz/logo.png" class="mr-3 h-6 sm:h-9" />
+        <img
+          src="https://i.ibb.co/QN6fQnz/logo.png"
+          class="mr-3 h-6 sm:h-9"
+          alt=""
+        />
         <span
           class="self-center text-xl font-semibold whitespace-nowrap dark:text-white vsm:hidden"
           >Sontac Movies</span
@@ -190,7 +194,6 @@
           (click)="
             searchOpened = !searchOpened;
             discoverOpened = false;
-            query = '';
             searchOpened
               ? (responsiveOpened = true)
               : (responsiveOpened = false)
@@ -219,7 +222,6 @@
           {{ "nav.contact" | translate }}
         </button>
         <button
-          (click)="refresh()"
           id="theme-toggle"
           type="button"
           class="sm:ml-4 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
@@ -455,26 +457,23 @@
               <span class="sr-only">Search icon</span>
             </div>
             <input
-              [(ngModel)]="query"
-              (input)="onTyping()"
+              #searchInput
               type="text"
               id="search-navbar"
               class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Search..."
             />
             <div
-              *ngIf="searchContainer != null && query != ''"
+              *ngIf="searchContainer"
               class="fixed md:left-[20%] md:right-[20%] xl:left-auto sm:left-3 sm:right-3 xl:right-auto xl:w-[820px] w-auto text-gray-200 mt-2 overflow-auto max-h-[400px] h-auto text-justify dark:bg-gray-900 bg-gray-200 p-3 z-0"
             >
               <div
                 *ngFor="let item of searchContainer.results"
                 class="z-50 mb-1 p-3 rounded"
-                [class]="
-                  item.title != null ? 'dark:bg-gray-800 bg-gray-100' : 'hidden'
-                "
+                [class]="item.title ? 'dark:bg-gray-800 bg-gray-100' : 'hidden'"
               >
                 <a
-                  *ngIf="item.title != null"
+                  *ngIf="item.title"
                   [href]="'/details/' + item.id"
                   class="dark:text-gray-200 text-gray-800 text-[16px]"
                   >{{ item.title }}
@@ -488,8 +487,8 @@
                       item.vote_average <= 5
                         ? 'bg-red-500'
                         : item.vote_average > 7
-                        ? 'bg-green-500'
-                        : 'bg-yellow-500'
+                          ? 'bg-green-500'
+                          : 'bg-yellow-500'
                     "
                     >{{ item.vote_average.toFixed(1) }}</span
                   ></a

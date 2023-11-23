@@ -1,22 +1,18 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {MovieModel} from "../../models/movie.model";
-import {StorageService} from "../../services/storage/storage.service";
+import { Component, Input } from '@angular/core';
+import { MovieModel } from '../../models/movie.model';
+import { StorageService } from '../../services/storage/storage.service';
 
 @Component({
   selector: 'app-second-card',
-  templateUrl: './second-card.component.html'
+  templateUrl: './second-card.component.html',
 })
-export class SecondCardComponent implements OnInit {
+export class SecondCardComponent {
   @Input() item!: MovieModel;
 
   successAlert: boolean = false;
   errorAlert: boolean = false;
 
-  constructor(private storage: StorageService) {
-  }
-
-  ngOnInit(): void {
-  }
+  constructor(private storage: StorageService) {}
 
   addToFavorite() {
     const ids = this.storage.getStorageValue<number[]>('favoriteId', []);
@@ -34,5 +30,4 @@ export class SecondCardComponent implements OnInit {
       this.successAlert = false;
     }, 2000);
   }
-
 }

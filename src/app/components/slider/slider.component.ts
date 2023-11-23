@@ -1,6 +1,6 @@
-import {Component, Input, ViewEncapsulation} from "@angular/core";
-import SwiperCore, {Pagination} from "swiper";
-import {MovieModel} from "../../models/movie.model";
+import { Component, Input, ViewEncapsulation } from '@angular/core';
+import SwiperCore, { Pagination } from 'swiper';
+import { MovieModel } from '../../models/movie.model';
 
 SwiperCore.use([Pagination]);
 
@@ -8,7 +8,7 @@ SwiperCore.use([Pagination]);
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./slider.component.scss']
+  styleUrls: ['./slider.component.scss'],
 })
 export class SliderComponent {
   @Input() container: MovieModel[] = [];

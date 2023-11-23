@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-tvs',
   templateUrl: './tvs.component.html',
-  styleUrls: ['./tvs.component.css']
+  styleUrls: ['./tvs.component.css'],
 })
-export class TvsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class TvsComponent {
+  constructor() {}
 }

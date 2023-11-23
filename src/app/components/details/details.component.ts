@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TMDBService } from '../../services/api/tmdb.service';
 import { ActivatedRoute } from '@angular/router';
 import { CreditsModel } from '../../models/credits.model';
@@ -23,7 +23,10 @@ export class DetailsComponent implements OnInit {
   reviewsElement!: ReviewsModel;
   recommendationElement!: RecommendationsModel;
 
-  constructor(private route: ActivatedRoute, private http: TMDBService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private http: TMDBService,
+  ) {}
 
   async ngOnInit() {
     this.id = +(this.route.snapshot.paramMap.get('id') ?? 0);

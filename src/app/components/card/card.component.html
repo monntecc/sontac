@@ -1,27 +1,72 @@
 <div class="py-3 sm:max-w-xl sm:mx-auto mb-10 md:mb-0 relative">
-  <div class="dark:bg-gray-800 bg-gray-50 shadow-lg dark:border-gray-700 border-gray-200 max-h-80 border sm:rounded pt-8 pb-8 pr-8 flex space-x-10 h-[500px]">
-    <a class="h-48 w-1/2 items-center flex justify-center" [href]="'/details/' + item.id">
-      <img class="mt-16 pl-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition-transform "
-           [src]="item.poster_path  != null ? item.poster_path : 'https://static.hdrezka.ac/i/nopersonphoto.png'">
+  <div
+    class="dark:bg-gray-800 bg-gray-50 shadow-lg dark:border-gray-700 border-gray-200 max-h-80 border sm:rounded pt-8 pb-8 pr-8 flex space-x-10 h-[500px]"
+  >
+    <a
+      class="h-48 w-1/2 items-center flex justify-center"
+      [href]="'/details/' + item.id"
+    >
+      <img
+        class="mt-16 pl-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition-transform"
+        [src]="
+          item.poster_path
+            ? item.poster_path
+            : 'https://static.hdrezka.ac/i/nopersonphoto.png'
+        "
+        fill=""
+        alt=""
+      />
     </a>
     <div class="flex flex-col w-1/2 space-y-4">
       <div class="flex justify-between items-start">
-        <a [href]="'/details/' + item.id"
-           class="hover:text-blue-500 text-2xl font-bold dark:text-gray-300 text-gray-800">{{item.title || '** Unknown title **'}}</a>
+        <a
+          [href]="'/details/' + item.id"
+          class="hover:text-blue-500 text-2xl font-bold dark:text-gray-300 text-gray-800"
+          >{{ item.title || "** Unknown title **" }}</a
+        >
         <section class="flex flex-col">
-          <div class="font-bold rounded-xl p-2"
-               [class]="item.vote_average <= 5 ? 'bg-red-500' : item.vote_average > 7 ? 'bg-green-500' : 'bg-yellow-500'">{{item.vote_average.toFixed(1)}}
+          <div
+            class="font-bold rounded-xl p-2"
+            [class]="
+              item.vote_average <= 5
+                ? 'bg-red-500'
+                : item.vote_average > 7
+                  ? 'bg-green-500'
+                  : 'bg-yellow-500'
+            "
+          >
+            {{ item.vote_average.toFixed(1) }}
           </div>
-          <button (click)="addToFavorite()" class="mt-2 transition-all inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button" [disabled]="isFavorited">
-            <span [class]="isFavorited ? 'hidden': 'block'"><img src="https://i.ibb.co/288SC2c/favorite-1.png" alt="" class="w-8" [ngClass]="themeColor === 'dark' ? 'saturate' : 'normal'"></span>
-            <span [class]="isFavorited ? 'block': 'hidden'"><img src="https://i.ibb.co/RQTJ3D6/favorite-3.png" alt="" class="w-8"></span>
+          <button
+            (click)="addToFavorite()"
+            class="mt-2 transition-all inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+            type="button"
+            [disabled]="isFavorited"
+          >
+            <span [class]="isFavorited ? 'hidden' : 'block'"
+              ><img
+                src="https://i.ibb.co/288SC2c/favorite-1.png"
+                alt=""
+                class="w-8"
+                [ngClass]="themeColor === 'dark' ? 'saturate' : 'normal'"
+            /></span>
+            <span [class]="isFavorited ? 'block' : 'hidden'"
+              ><img
+                src="https://i.ibb.co/RQTJ3D6/favorite-3.png"
+                alt=""
+                class="w-8"
+            /></span>
           </button>
         </section>
       </div>
       <div>
-        <div class="text-sm dark:text-blue-300 text-blue-500 font-medium">{{item.release_date}}</div>
+        <div class="text-sm dark:text-blue-300 text-blue-500 font-medium">
+          {{ item.release_date }}
+        </div>
       </div>
-      <p class="dark:text-gray-400 text-gray-600 max-h-40 overflow-y-hidden">{{item.overview.slice(0, 60) + '...'}}</p>
+      <p class="dark:text-gray-400 text-gray-600 max-h-40 overflow-y-hidden">
+        {{ item.overview.slice(0, 60) + "..." }}
+      </p>
     </div>
   </div>
 </div>

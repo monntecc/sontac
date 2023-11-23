@@ -1,46 +1,95 @@
 <section class="flex flex-col mt-[7rem]">
-  <h2 class="text-3xl dark:text-gray-200 text-gray-800 ml-3 mt-5 mb-3">{{'discover-tv-title' | translate}}</h2>
-  <div class="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-4" *ngIf="discoverTVContainer != null">
+  <h2 class="text-3xl dark:text-gray-200 text-gray-800 ml-3 mt-5 mb-3">
+    {{ "discover-tv-title" | translate }}
+  </h2>
+  <div
+    class="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-4"
+    *ngIf="discoverTVContainer"
+  >
     <div *ngFor="let item of discoverTVContainer">
       <div class="py-3 sm:max-w-xl sm:mx-auto mb-10 md:mb-0 relative">
-        <div class="dark:bg-gray-800 bg-gray-100 shadow-lg dark:border-gray-700 border-gray-300 max-h-80 border sm:rounded-3xl p-8 flex space-x-8 h-[500px]">
+        <div
+          class="dark:bg-gray-800 bg-gray-100 shadow-lg dark:border-gray-700 border-gray-300 max-h-80 border sm:rounded-3xl p-8 flex space-x-8 h-[500px]"
+        >
           <a class="h-48 overflow-visible w-1/2" [href]="'/details/' + item.id">
-            <img class="rounded-3xl shadow-lg hover:transform hover:scale-90 transition-transform "
-                 [src]="item.poster_path  != null ? item.poster_path : 'https://static.hdrezka.ac/i/nopersonphoto.png'">
+            <img
+              class="rounded-3xl shadow-lg hover:transform hover:scale-90 transition-transform"
+              [src]="
+                item.poster_path
+                  ? item.poster_path
+                  : 'https://static.hdrezka.ac/i/nopersonphoto.png'
+              "
+              alt=""
+            />
           </a>
           <div class="flex flex-col w-1/2 space-y-4">
             <div class="flex justify-between items-start">
-              <a [href]="'/details/' + item.id"
-                 class="hover:text-blue-500 text-2xl font-bold dark:text-gray-300 text-gray-800">{{item.name || '** Unknown title **'}}
+              <a
+                [href]="'/details/' + item.id"
+                class="hover:text-blue-500 text-2xl font-bold dark:text-gray-300 text-gray-800"
+                >{{ item.name || "** Unknown title **" }}
               </a>
               <section class="flex flex-col">
-                <div class="font-bold rounded-xl p-2"
-                     [class]="item.vote_average <= 5 ? 'bg-red-500' : item.vote_average > 7 ? 'bg-green-500' : 'bg-yellow-500'">{{item.vote_average.toFixed(1)}}
+                <div
+                  class="font-bold rounded-xl p-2"
+                  [class]="
+                    item.vote_average <= 5
+                      ? 'bg-red-500'
+                      : item.vote_average > 7
+                        ? 'bg-green-500'
+                        : 'bg-yellow-500'
+                  "
+                >
+                  {{ item.vote_average.toFixed(1) }}
                 </div>
               </section>
             </div>
             <div>
-              <div class="text-sm dark:text-blue-300 text-blue-500 font-medium">{{item.first_air_date}}</div>
+              <div class="text-sm dark:text-blue-300 text-blue-500 font-medium">
+                {{ item.first_air_date }}
+              </div>
             </div>
-            <p class="dark:text-gray-400 text-gray-600 max-h-40 overflow-y-hidden">{{'tv.language' | translate}} <span class="text-blue-400 font-medium">{{item.origin_country}}</span></p>
-            <p class="dark:text-gray-400 text-gray-600 max-h-40 overflow-y-hidden">{{'tv.vote' | translate}} <span class="text-blue-400 font-medium">{{item.vote_count}}</span></p>
+            <p
+              class="dark:text-gray-400 text-gray-600 max-h-40 overflow-y-hidden"
+            >
+              {{ "tv.language" | translate }}
+              <span class="text-blue-400 font-medium">{{
+                item.origin_country
+              }}</span>
+            </p>
+            <p
+              class="dark:text-gray-400 text-gray-600 max-h-40 overflow-y-hidden"
+            >
+              {{ "tv.vote" | translate }}
+              <span class="text-blue-400 font-medium">{{
+                item.vote_count
+              }}</span>
+            </p>
           </div>
         </div>
       </div>
-
     </div>
   </div>
-  <div  class="flex dark:text-gray-300 text-gray-700 gap-2 flex-col items-end w-full mb-4 mt-2 text-2xl px-5">
-    <span class="font-medium">{{'page' | translate}}:</span>
+  <div
+    class="flex dark:text-gray-300 text-gray-700 gap-2 flex-col items-end w-full mb-4 mt-2 text-2xl px-5"
+  >
+    <span class="font-medium">{{ "page" | translate }}:</span>
     <div class="flex flex-row gap-2 items-center pl-8 pr-8 pt-2 pb-2 rounded">
       <button (click)="page = page - 1; onEdit()" [disabled]="page === 1">
-        <img src="https://i.ibb.co/NFhKs4Z/3899497.png" class="w-[30px]"
-             style="transform: rotate(180deg)"
-        >
+        <img
+          src="https://i.ibb.co/NFhKs4Z/3899497.png"
+          class="w-[30px]"
+          style="transform: rotate(180deg)"
+          alt=""
+        />
       </button>
-      <span class="text-2xl font-medium">{{page}}</span>
+      <span class="text-2xl font-medium">{{ page }}</span>
       <button (click)="page = page + 1; onEdit()">
-        <img src="https://i.ibb.co/NFhKs4Z/3899497.png" class="w-[30px]">
+        <img
+          src="https://i.ibb.co/NFhKs4Z/3899497.png"
+          class="w-[30px]"
+          alt=""
+        />
       </button>
     </div>
   </div>

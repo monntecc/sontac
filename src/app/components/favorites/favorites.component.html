@@ -1,15 +1,51 @@
-<section class="flex sm:flex-row justify-around mb-8 relative w-full z-0 rounded-2xl border border-gray-400 dark:border-gray-800 py-3 px-5 items-center vsm:flex-col sm:h-[320px]">
-  <div class="absolute top-0 bottom-0 right-0 left-0 z-[-1] w-auto justify-center items-center flex">
-    <img [src]="'https://image.tmdb.org/3/t/p/original/' + item.backdrop_path" class="w-full h-full blur">
+<section
+  class="flex sm:flex-row justify-around mb-8 relative w-full z-0 rounded-2xl border border-gray-400 dark:border-gray-800 py-3 px-5 items-center vsm:flex-col sm:h-[320px]"
+>
+  <div
+    class="absolute top-0 bottom-0 right-0 left-0 z-[-1] w-auto justify-center items-center flex"
+  >
+    <img
+      [src]="'https://image.tmdb.org/3/t/p/original/' + item.backdrop_path"
+      class="w-full h-full blur"
+      alt=""
+    />
   </div>
-    <img [src]="'https://image.tmdb.org/3/t/p/w500/' + item.poster_path" class="rounded-xl w-auto max-w-[160px]">
-    <div class="flex flex-col bg-gray-200 bg-opacity-20 py-3 px-6 rounded-2xl sm:mt-0 mt-6">
-      <span class="font-medium text-[20px] dark:text-gray-200 text-purple-50">{{item.title}}</span>
-      <span class="text-blue-300 font-medium">{{item.vote_average.toFixed(1)}}</span>
-      <span class="max-w-[200px] mt-3 dark:text-gray-200 text-gray-100">{{item.overview?.slice(0, 50) + '...'}}</span>
-      <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-        <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" routerLink="/details/{{item.id}}">View Details</button>
-        <button data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600" (click)="onRemove()">Remove</button>
-      </div>
+  <img
+    [src]="'https://image.tmdb.org/3/t/p/w500/' + item.poster_path"
+    class="rounded-xl w-auto max-w-[160px]"
+    alt=""
+  />
+  <div
+    class="flex flex-col bg-gray-200 bg-opacity-20 py-3 px-6 rounded-2xl sm:mt-0 mt-6"
+  >
+    <span class="font-medium text-[20px] dark:text-gray-200 text-purple-50">{{
+      item.title
+    }}</span>
+    <span class="text-blue-300 font-medium">{{
+      item.vote_average.toFixed(1)
+    }}</span>
+    <span class="max-w-[200px] mt-3 dark:text-gray-200 text-gray-100">{{
+      item.overview?.slice(0, 50) + "..."
+    }}</span>
+    <div
+      class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600"
+    >
+      <button
+        data-modal-toggle="defaultModal"
+        type="button"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        routerLink="/details/{{ item.id }}"
+      >
+        View Details
+      </button>
+      <button
+        data-modal-toggle="defaultModal"
+        type="button"
+        class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+        (click)="onRemove()"
+      >
+        Remove
+      </button>
     </div>
+  </div>
 </section>
